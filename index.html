@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Verbo 'Être' em Francês</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A192F;
+            color: #E2E8F0;
+            line-height: 1.6;
+        }
+        .gradient-text-title {
+            background: linear-gradient(90deg, #FF3300, #FFFFCC, #00CCCC, #FF00FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-1 {
+            background: linear-gradient(90deg, #FFFFCC, #00CCCC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .lesson-card {
+            background-color: #112240;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1-px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .tab-btn.active {
+            background-color: #00CCCC;
+            color: #0A192F;
+            font-weight: bold;
+        }
+        .tab-btn:not(.active) {
+            background-color: #1A202C;
+            color: #A0AEC0;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .conjugation-table tr {
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option {
+            background-color: #4A5568;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            transform: translateY(-2px);
+            background-color: #718096;
+        }
+        .quiz-option.correct {
+            background-color: #10B981;
+        }
+        .quiz-option.incorrect {
+            background-color: #EF4444;
+        }
+        .quiz-option.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-next {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background-color: #FF00FF;
+            color: white;
+        }
+        .pronoun-je { color: #87CEFA; }
+        .pronoun-tu { color: #7FFFD4; }
+        .pronoun-il { color: #FFD700; }
+        .pronoun-elle { color: #FF6347; }
+        .pronoun-on { color: #FFA07A; }
+        .pronoun-nous { color: #DA70D6; }
+        .pronoun-vous { color: #40E0D0; }
+        .pronoun-ils { color: #ADFF2F; }
+        .pronoun-elles { color: #FFC0CB; }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-4xl mx-auto space-y-12">
+        <header class="text-center mb-10">
+            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+                <span class="gradient-text-title">O Verbo 'Être' em Francês</span>
+            </h1>
+            <p class="mt-4 text-lg text-slate-400">
+                O verbo "ser" ou "estar" é fundamental. Vamos aprender a conjugá-lo e usá-lo corretamente.
+            </p>
+        </header>
+
+        <section class="lesson-card space-y-6">
+            <h2 class="text-3xl font-bold"><span class="gradient-text-1">1. Conjugação no Presente</span></h2>
+            <p class="text-slate-300">
+                O verbo **être** é muito irregular e deve ser memorizado.
+            </p>
+            <p class="text-slate-400 italic">
+                <strong>Nota:</strong> Em francês, não existe distinção entre os verbos "ser" e "estar". O verbo **être** é usado para ambos os casos, e o contexto da frase é que define a tradução correta.
+            </p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left bg-[#1A202C] rounded-lg">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="p-4">Pronome</th>
+                            <th class="p-4">Conjugação</th>
+                            <th class="p-4">Tradução</th>
+                            <th class="p-4">Pronúncia (som aproximado)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-je">Je</td>
+                            <td class="p-4">suis</td>
+                            <td class="p-4">Eu sou/estou</td>
+                            <td class="p-4">Jê suí</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-tu">Tu</td>
+                            <td class="p-4">es</td>
+                            <td class="p-4">Tu és/estás</td>
+                            <td class="p-4">Tú é</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-il">Il</td>
+                            <td class="p-4">est</td>
+                            <td class="p-4">Ele é/está</td>
+                            <td class="p-4">Il é</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-elle">Elle</td>
+                            <td class="p-4">est</td>
+                            <td class="p-4">Ela é/está</td>
+                            <td class="p-4">Él é</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-on">On</td>
+                            <td class="p-4">est</td>
+                            <td class="p-4">A gente é/está</td>
+                            <td class="p-4">Ôn é</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-nous">Nous</td>
+                            <td class="p-4">sommes</td>
+                            <td class="p-4">Nós somos/estamos</td>
+                            <td class="p-4">Nú sôm</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-vous">Vous</td>
+                            <td class="p-4">êtes</td>
+                            <td class="p-4">Vós sois/estais / Vocês são/estão</td>
+                            <td class="p-4">Vúz ét</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-ils">Ils</td>
+                            <td class="p-4">sont</td>
+                            <td class="p-4">Eles são/estão</td>
+                            <td class="p-4">Ils sôn</td>
+                        </tr>
+                        <tr class="hover:bg-slate-700">
+                            <td class="p-4 font-bold pronoun-elles">Elles</td>
+                            <td class="p-4">sont</td>
+                            <td class="p-4">Elas são/estão</td>
+                            <td class="p-4">Élz sôn</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <h2 class="text-3xl font-bold mt-12"><span class="gradient-text-1">2. Os Usos do 'Être'</span></h2>
+        
+        <section class="lesson-card space-y-6">
+            <p class="text-slate-300">
+                O verbo **être** é usado para descrever o estado de algo, sua identidade ou localização.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="tab-btn active" data-tab="identidade">Identidade e Profissão 🧑‍💻</button>
+                <button class="tab-btn" data-tab="qualidade">Qualidade e Aparência ✨</button>
+                <button class="tab-btn" data-tab="localizacao">Localização 🗺️</button>
+            </div>
+            <div id="tab-container">
+                <div id="identidade" class="tab-content active space-y-4">
+                    <p class="text-slate-300">
+                        Use **être** para falar sobre quem ou o que algo é, sua profissão, nacionalidade ou identidade.
+                    </p>
+                    <ul class="list-disc list-inside pl-4 space-y-2 text-slate-300">
+                        <li>profissão: <em>Je <strong>suis</strong> professeur.</em> (Eu sou professor.)</li>
+                        <li>Identidade: <em>Tu <strong>es</strong> brésilien.</em> (Tu és brasileiro.)</li>
+                        <li>Identidade: <em>Nous <strong>sommes</strong> amis.</em> (Nós somos amigos.)</li>
+                        <li>profissão: <em>Ils <strong>sont</strong> médecins.</em> (Eles são médicos.)</li>
+                        <li>Identidade: <em>Nous <strong>sommes</strong> étudiants.</em> (Nós somos estudantes.)</li>
+                        <li>profissão: <em>Vous <strong>êtes</strong> journalistes.</em> (Vocês são jornalistas.)</li>
+                        <li>profissão: <em>Elle <strong>est</strong> avocate.</em> (Ela é advogada.)</li>
+                        <li>Identidade: <em>Il <strong>est</strong> mon frère.</em> (Ele é meu irmão.)</li>
+                        <li>Identidade: <em>On <strong>est</strong> français.</em> (A gente é francês.)</li>
+                    </ul>
+                </div>
+                <div id="qualidade" class="tab-content space-y-4">
+                    <p class="text-slate-300">
+                        Use **être** para descrever características, qualidades ou o estado temporário de alguém ou algo.
+                    </p>
+                    <ul class="list-disc list-inside pl-4 space-y-2 text-slate-300">
+                        <li><em>Il <strong>est</strong> fatigué.</em> (Ele está cansado.)</li>
+                        <li><em>Elle <strong>est</strong> grande.</em> (Ela é alta.)</li>
+                        <li><em>Vous <strong>êtes</strong> contents.</em> (Vocês estão contentes.)</li>
+                        <li><em>Ce livre <strong>est</strong> intéressant.</em> (Este livro é interessante.)</li>
+                        <li><em>Le ciel <strong>est</strong> bleu.</em> (O céu está azul.)</li>
+                        <li><em>Elle <strong>est</strong> très gentille.</em> (Ela é muito gentil.)</li>
+                        <li><em>Nous <strong>sommes</strong> heureux.</em> (Nós estamos felizes.)</li>
+                        <li><em>Ils <strong>sont</strong> grands.</em> (Eles são altos.)</li>
+                        <li><em>Tu <strong>es</strong> intelligent.</em> (Você é inteligente.)</li>
+                    </ul>
+                </div>
+                <div id="localizacao" class="tab-content space-y-4">
+                    <p class="text-slate-300">
+                        Use **être** para indicar onde alguém ou algo está localizado.
+                    </p>
+                    <ul class="list-disc list-inside pl-4 space-y-2 text-slate-300">
+                        <li><em>Je <strong>suis</strong> à la maison.</em> (Eu estou em casa.)</li>
+                        <li><em>Nous <strong>sommes</strong> en France.</em> (Nós estamos na França.)</li>
+                        <li><em>Où <strong>êtes</strong>-vous ?</em> (Onde você está?)</li>
+                        <li><em>La voiture <strong>est</strong> dans le garage.</em> (O carro está no garage.)</li>
+                        <li><em>Les clés <strong>sont</strong> sur la table.</em> (As chaves estão sobre a mesa.)</li>
+                        <li><em>Elle <strong>est</strong> dans le jardin.</em> (Ela está no jardim.)</li>
+                        <li><em>Mon ami <strong>est</strong> au travail.</em> (Meu amigo está no trabalho.)</li>
+                        <li><em>Les enfants <strong>sont</strong> à l'école.</em> (As crianças estão na escola.)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section id="quiz-section" class="lesson-card space-y-6">
+            <h2 class="text-3xl font-bold"><span class="gradient-text-1">3. Teste seu Conhecimento! 🧐</span></h2>
+            <div id="quiz-container">
+                <p id="question-text" class="text-lg mb-4"></p>
+                <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                <p id="feedback-text" class="mt-4 font-bold"></p>
+                <button id="next-btn" class="btn-next mt-4 hidden">Próxima Pergunta</button>
+            </div>
+            <div id="quiz-results" class="hidden">
+                 <p class="text-2xl font-bold text-center">Quiz finalizado!</p>
+                 <p id="score-text" class="text-xl text-center mt-2"></p>
+                 <button id="restart-btn" class="btn-next mx-auto block mt-4">Tentar Novamente</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const tabId = button.dataset.tab;
+                    tabContents.forEach(content => {
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            const quizData = [
+                {
+                    question: "Como você diria 'Ela é minha irmã' em francês?",
+                    options: ["Elle suis ma soeur", "Elle est ma soeur", "Elle sont ma soeur"],
+                    answer: "Elle est ma soeur",
+                    explanation: "Correto! A conjugação de 'être' para 'elle' é 'est'."
+                },
+                {
+                    question: "Qual a conjugação para 'Nous'?",
+                    options: ["sont", "sommes", "êtes"],
+                    answer: "sommes",
+                    explanation: "Perfeito! 'Nous sommes' significa 'Nós somos' ou 'Nós estamos'."
+                },
+                {
+                    question: "A frase 'Vous êtes à Paris' significa:",
+                    options: ["Vocês vão para Paris", "Vocês estão em Paris", "Vocês são de Paris"],
+                    answer: "Vocês estão em Paris",
+                    explanation: "Exato! 'Être' é usado para localização."
+                },
+                {
+                    question: "Complete a frase: 'Je ______ content.'",
+                    options: ["suis", "es", "est"],
+                    answer: "suis",
+                    explanation: "Isso mesmo! A conjugação para 'je' é 'suis'."
+                },
+                {
+                    question: "Como você pergunta 'Você está pronto?' (informal)?",
+                    options: ["Es-tu prêt?", "Êtes-vous prêt?", "Tu est prêt?"],
+                    answer: "Es-tu prêt?",
+                    explanation: "Correto! Para a forma informal ('tu'), usamos 'es'."
+                },
+                {
+                    question: "O verbo 'être' significa:",
+                    options: ["Ir", "Ter", "Ser ou estar"],
+                    answer: "Ser ou estar",
+                    explanation: "Correto! É um dos verbos mais básicos e importantes."
+                }
+            ];
+
+            let currentQuestionIndex = 0;
+            let score = 0;
+
+            const questionText = document.getElementById('question-text');
+            const optionsContainer = document.getElementById('options-container');
+            const feedbackText = document.getElementById('feedback-text');
+            const nextBtn = document.getElementById('next-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const quizContainer = document.getElementById('quiz-container');
+            const quizResults = document.getElementById('quiz-results');
+            const scoreText = document.getElementById('score-text');
+
+            function loadQuestion() {
+                feedbackText.textContent = '';
+                nextBtn.classList.add('hidden');
+                optionsContainer.innerHTML = '';
+
+                if (currentQuestionIndex >= quizData.length) {
+                    showResults();
+                    return;
+                }
+
+                const currentQuestion = quizData[currentQuestionIndex];
+                questionText.textContent = currentQuestion.question;
+
+                currentQuestion.options.forEach(option => {
+                    const button = document.createElement('button');
+                    button.textContent = option;
+                    button.classList.add('quiz-option');
+                    button.addEventListener('click', () => selectAnswer(button, currentQuestion));
+                    optionsContainer.appendChild(button);
+                });
+            }
+
+            function selectAnswer(selectedButton, question) {
+                const isCorrect = selectedButton.textContent === question.answer;
+
+                if (isCorrect) {
+                    selectedButton.classList.add('correct');
+                    feedbackText.textContent = question.explanation;
+                    feedbackText.style.color = '#10B981';
+                    score++;
+                } else {
+                    selectedButton.classList.add('incorrect');
+                    feedbackText.textContent = "Tente de novo! A resposta correta era: " + question.answer;
+                    feedbackText.style.color = '#EF4444';
+                    optionsContainer.querySelectorAll('.quiz-option').forEach(btn => {
+                        if (btn.textContent === question.answer) {
+                            btn.classList.add('correct');
+                        }
+                    });
+                }
+                optionsContainer.querySelectorAll('.quiz-option').forEach(btn => {
+                    btn.classList.add('disabled');
+                    btn.removeEventListener('click', selectAnswer);
+                });
+                nextBtn.classList.remove('hidden');
+            }
+            
+            function showResults() {
+                quizContainer.classList.add('hidden');
+                quizResults.classList.remove('hidden');
+                scoreText.textContent = `Você acertou ${score} de ${quizData.length} perguntas!`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentQuestionIndex++;
+                loadQuestion();
+            });
+            
+            restartBtn.addEventListener('click', () => {
+                currentQuestionIndex = 0;
+                score = 0;
+                quizResults.classList.add('hidden');
+                quizContainer.classList.remove('hidden');
+                loadQuestion();
+            });
+
+            loadQuestion();
+        });
+    </script>
+</body>
+</html>
